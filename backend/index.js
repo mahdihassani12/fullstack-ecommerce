@@ -14,6 +14,7 @@ app.use(express.json({ extended: false }));
 // API integration
 app.use("/api/users", require("./routes/users"));
 app.use("/api/products", require("./routes/products"));
+app.use("/api/auth", require("./routes/auth"));
 
 // Listener to server port
 app.listen(PORT, () => {
