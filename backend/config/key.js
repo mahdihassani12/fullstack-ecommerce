@@ -1,3 +1,4 @@
 module.exports = {
-    mongoURI: "mongodb://localhost:27017/ecommerce"
-}
+  mongoURI: "mongodb://localhost:27017/ecommerce",
+  jwtSecret: "ecommerceSecret",
+};
