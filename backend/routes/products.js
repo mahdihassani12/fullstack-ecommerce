@@ -6,5 +6,6 @@ const { storeProductValidation } = require("../middlewares/validations");
 
 router.get("/", productsController.getProducts);
 router.post("/", auth, storeProductValidation, productsController.postStoreProducts);
+router.get("/:id", productsController.getProduct);
 
 module.exports = router;
