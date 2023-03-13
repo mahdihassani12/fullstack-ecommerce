@@ -23,7 +23,17 @@ const UserRequests = [
     .withMessage("Please provide a valid customer role")
 ];
 
+const UserAuth = [
+  body('email')
+    .isEmail()
+    .withMessage("Please provide a valid email address"),
+  body('password')
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide password")
+]
+
 
 module.exports = {
-    UserRequests
+    UserRequests,
+    UserAuth
 }

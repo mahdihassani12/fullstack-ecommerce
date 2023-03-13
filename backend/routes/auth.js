@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../middlewares/authorization");
-const User = require("../models/User");
-const jwt = require("jsonwebtoken");
-const config = require("../config/key");
-const bcrypt = require("bcryptjs");
+const usersController = require("../controllers/usersController");
+const { UserAuth } = require("../middlewares/validations");
 
 // defining the routes
-router.get("/", auth, (req, res) => res.send("Auth route"));
-
+router.get("/", auth, usersController.getUser);
+router.post("/", UserAuth, usersController.authUser);
 module.exports = router;
